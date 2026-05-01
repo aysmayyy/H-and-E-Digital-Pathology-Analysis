@@ -38,10 +38,28 @@ Implements "Silva Scoring" logic to automatically calculate:
 Histopathology slides often suffer from "batch effects" where staining intensity varies. This pipeline is built with a **Calibration Mode**:
 * Users can pass custom threshold limits into `TissueSegmenter.m` to account for specific batch variations without modifying the underlying logic.
 
-## 🚀 Usage
-1. Place your `.png` or `.tif` slide images in the root directory.
-2. Open `AnalyzePathology.m` and update the `img_name` variable.
-3. Run the script to generate numerical data and visual validation plots.
+## 🚀 How to Use the Pipeline
+
+### 1. Prerequisites
+Ensure you have **MATLAB** installed along with the following toolboxes:
+* **Image Processing Toolbox**
+* **Statistics and Machine Learning Toolbox** (required for `Classify_RGB_Image.m`)
+
+### 2. Setup
+1. Clone this repository or download the four `.m` files into a single folder.
+2. Place your image files (e.g., `.png`, `.tif`, or `.jpg`) in that same folder.
+
+### 3. Running Automated Analysis
+1. Open `AnalyzePathology.m` in MATLAB.
+2. Update the `img_name` variable at the top of the script to match your filename:
+   ```matlab
+   I = imread('your_image_name.png');
+Press Run. The results will print to the Command Window, and a figure will appear showing the segmentation masks.
+
+### 4. Interactive Classification (Optional)
+If a slide is uniquely stained or difficult to segment automatically:
+1. Run `Classify_RGB_Image.m`.
+2. Follow the on-screen prompts to select an image and label sample pixels.
 
 ## 📜 License
 This project is licensed under the **MIT License**.
