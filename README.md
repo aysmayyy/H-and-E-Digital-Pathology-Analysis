@@ -10,6 +10,8 @@ The project bridges the gap between digital pathology and clinical research by a
 ### 1. Stain Deconvolution (Color Unmixing)
 Utilizes **Optical Density (OD) Matrix Inversion** (based on the Beer-Lambert Law) to mathematically separate the Hematoxylin (nuclei) and Eosin (cytoplasm/connective tissue) channels. This allows for precise structural analysis even where stains overlap.
 
+
+
 ### 2. Robust L*a*b* Segmentation
 Unlike standard RGB filtering, this pipeline operates in the **CIE L*a*b* color space**. This ensures that segmentation is based on true color perception and remains robust against variations in microscope lighting and brightness.
 
@@ -19,9 +21,10 @@ Implements "Silva Scoring" logic to automatically calculate:
 * **Aeration Ratio:** Percentage of open alveolar space.
 * **Atelectasis Score:** Quantitative measure of tissue density and alveolar collapse.
 
-### 4. Machine Learning & GUI Tools
-* **K-Means Clustering:** Includes unsupervised learning scripts to automatically group tissue types without manual thresholding.
-* **Interactive Classifier:** A Discriminant Analysis GUI that allows researchers to "train" the system on custom slides.
+### 4. Supervised Classification GUI
+* **Discriminant Analysis:** The project includes a `Classify_RGB_Image.m` tool. This allows researchers to manually "train" the system by labeling sample pixels, which the algorithm then uses to classify the rest of the tissue based on statistical probability.
+
+
 
 ## 📂 Repository Structure
 
